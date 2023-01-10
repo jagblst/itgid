@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: Impact;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+p, ul {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-bold {
+    font-weight: 800;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.article-img {
+    max-width: 80%;
+    margin: 20px auto;
+    display: block;
+}
+
+.img-description {
+    text-align: center;
+    font-style: italic;
+    margin: 20px 0 40px 0;
+}
