@@ -84,9 +84,47 @@ h1 {
 
 /* table 02 ================== */
 
+.users th,
+.users td {
+    border: 1px solid #c0c0c0;
+    padding: 10px;
+    text-align: center;
+}
 
+.users .header-table {
+    background: orangered;
+    color: white;
+}
+
+.users th {
+    font-weight: normal;
+}
 /* table 03 ================== */
 
+.line-table tr {
+    border-bottom: 1px solid orange;
+}
+
+.line-table th,
+.line-table td {
+    padding: 10px;
+    text-align: center;
+}
 
  /* table 04 ====================== */
  
+.plan {
+border: 1px solid #dce0e5;
+background-color: #fff;
+text-align: left;
+box-shadow: 4px 4px 4px 0 rgb(0 0 0 / 30%);
+}
+
+.plan th {
+text-align: center;
+}
+
+.plan th,
+.plan td {
+padding: 10px;
+}
