@@ -91,15 +91,17 @@ h1 {
     text-align: center;
 }
 
-.users .header-table {
+.users .header-table th{
     background: orangered;
     color: white;
-}
-
-.users th {
     font-weight: normal;
 }
+
 /* table 03 ================== */
+
+.line-table {
+    width: 100%;
+}
 
 .line-table tr {
     border-bottom: 1px solid orange;
