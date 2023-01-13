@@ -126,9 +126,12 @@ p {
 }
 
 .out-1 .t-2 {
+    left: 100px;
 }
 
 .out-1 .t-3 {
+    left: 200px;
+    top: -200px;
 }
 
 /* Task 1 END -------------------------------------- */
@@ -147,9 +150,12 @@ p {
 }
 
 .out-2 .t-2 {
+    left: 100px;
+    top: 100px;
 }
 
 .out-2 .t-3 {
+    left: 200px;
 }
 
 /* Task 2 END -------------------------------------- */
@@ -168,12 +174,18 @@ p {
 }
 
 .out-3 .t-1 {
+    left: 50px;
+    top: 50px;
 }
 
 .out-3 .t-2 {
+    left: 100px;
+    top: 100px;
 }
 
 .out-3 .t-3 {
+    left: 150px;
+    top: 150px;
 }
 
 /* Task 3 END -------------------------------------- */
@@ -191,17 +203,17 @@ p {
     position: absolute;
 }
 
-.out-4 .t-1 {
-
-}
-
 .out-4 .t-2 {
+    top: 100px;
 }
 
 .out-4 .t-3 {
+    right: 0;
 }
 
 .out-4 .t-4 {
+    right: 0;
+    top: 100px;
 }
 
 /* Task 4 END -------------------------------------- */
@@ -217,15 +229,20 @@ p {
 
 .out-5 .t-1, .out-5 .t-2, .out-5 .t-3 {
     position: absolute;
+    transform: rotate(45deg);
+    top: 50px;
 }
 
 .out-5 .t-1 {
+    left: 100px;
 }
 
 .out-5 .t-2 {
+    left: 150px;
 }
 
 .out-5 .t-3 {
+    left: 200px;
 }
 
 
@@ -237,7 +254,8 @@ p {
 }
 
 .out-6 .s-6 {
-
+    position: relative;
+    top: -10px;
 }   
 
 
@@ -248,19 +266,26 @@ p {
     background: #000;
     width: 30px;
     height: 30px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
 }
-  
-
 
 /* Task 7 END -------------------------------------- */
 
 /* Task 8 -------------------------------------- */
 .out-8 {
+    position: relative;
     padding: 10px;
 }
   
 
 .span-8 {
+    display: block;
+    position: absolute;
+    height: 30px;
+    left: 0; 
+    right: 0;
     text-align: center;
 } 
 /* Task 8 END -------------------------------------- */
@@ -271,9 +296,24 @@ p {
     height: 30px;
     border: 1px solid black;
     box-sizing: content-box;
+    position: relative;
 }
 
+.out-9 .span-9-1, .out-9 .span-9-2, .out-9 .span-9-3 {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+}
 
+.out-9 .span-9-2 {
+    left: 100px;
+}
+
+.out-9 .span-9-3 {
+    right: 0;
+}
 /* Task 9 END -------------------------------------- */
 
 /* Task 10 -------------------------------------- */
@@ -281,10 +321,27 @@ p {
     width: 300px;
     height: 90px;
     position: relative;
-    /* потом свойство background удалите */
-    background: orange;
 }
 
+.out-10 .block-1, .out-10 .block-2, .out-10 .block-3 {
+    width: 300px;
+    height: 30px;
+    text-align: center; 
+    line-height: 30px;
+    border-style: solid;
+}
 
+.out-10 .block-1 {
+    border-width: 1px 1px 0 1px;
+}
 
+.out-10 .block-2 {
+    position: relative;
+    border-width: 0 1px 0 1px;
+    left: 150px;
+}
+
+.out-10 .block-3 {
+    border-width: 0 1px 1px 1px;
+}
 /* Task 10 END -------------------------------------- */
