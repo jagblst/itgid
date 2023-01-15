@@ -120,17 +120,70 @@ figure {
 
 /* task 1  ============= */
 
+.task-1 .t-1 {
+    float: left;
+}
+
 /* task 2  ============= */
+
+.task-2 .t-1, .task-2 .t-2 {
+    float: left;
+}
 
 /* task 3  ============= */
 
+.task-3 .t-1, .task-3 .t-2  {
+    float: left;
+    width: 50%;
+}
+
 /* task 4  ============= */
+
+.task-4 .b-1, .task-4 .b-2 {
+    float: left;
+    width: 50%;
+}
 
 /* task 5  ============= */
 
+
+.task-5 .b-1, .task-5 .b-2 {
+    float: left;
+    width: 50%;
+}
+
+.task-5 .b-3 {
+    float: left;
+    width: 33.3333%;
+}
+
 /* task 6  ============= */
 
+.task-6 .header, .task-6 .b-4 {
+    width: 100%;
+    height: 100px;
+}
+
+.task-6 .b-2 {
+    float: left;
+    width: 30%;
+}
+
+.task-6 .b-3 {
+    float: left;
+    width: 70%;
+}
 /* task 7  ============= */
+
+.task-7 .b-1, .task-7 .b-2, .task-7 .b-3 {
+    float: left;
+    width: 33.3333%;
+}
+
+.task-7 .b-4 {
+    float: left;
+    width: 75%;
+}
 
 /* task-8 ============== */
 
@@ -140,18 +193,26 @@ figure {
 .task-8 .b-4 {
     padding: 10px;
     min-height: 50px;
+    float: left;
+    width: 50%;
 }
 
 /* task-9 ======================== */
 
 .nav-9 {
     padding: 5px;
+    height: 58px;
 }
 
 .nav-9 ul {
+    padding-left: 0;
 }
 
 .nav-9 ul li {
+    float: left;
+    border: 1px solid black;
+    list-style-type: none;
+    padding: 10px;
 }
 
 /* task-10 ======================== */
@@ -163,7 +224,7 @@ figure {
 
 .nav-10 ul {
     padding-left: 0;
-
+    font-size: 0;
 }
 
 .nav-10 ul li {
