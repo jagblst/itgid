@@ -110,22 +110,38 @@ p {
 
 /* ================ task 1 ========================= */
 .out-1 {
+    display: flex;
+    justify-content: center;
 }
 
 /* ================ task 2 ========================= */
 .out-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* ================ task 3 ========================= */
 .out-3 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* ================ task 4 ========================= */
 .out-4 {
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* ================ task 5 ========================= */
 .out-5 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 
