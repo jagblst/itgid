@@ -102,11 +102,157 @@ p {
 
 
 .block {
-    width: 50px;
-    height:150px;
-    margin: 1%;
+    width: 50px; 
+    height:150px; 
+    margin: 1%; 
 }
 
 /* ================ task 1 ========================= */
 
+.out-1 .block {
+    width: auto;
+    margin: 5px;
+}
+
+.out-1 {
+    display: grid;
+    grid-template-areas: 
+    "block-1 block-2 block-3 block-4"; 
+}
+
+.out-1 .block-1 {
+    grid-area: block-1;
+}
+
+.out-1 .block-2 {
+    grid-area: block-2;
+}
+
+.out-1 .block-3 {
+    grid-area: block-3;
+}
+
+.out-1 .block-4 {
+    grid-area: block-4;
+}
+
+@media (max-width: 800px){
+    .out-1 {
+        min-height: auto;
+        grid-template-areas: 
+        "block-1 block-2"
+        "block-3 block-4";
+    }
+}
+
+@media (max-width: 600px){
+    .out-1 {
+        grid-template-areas: 
+        "block-1"
+        "block-2"
+        "block-3"
+        "block-4";
+    }
+}
 /* ================ task 2 ========================= */
+
+.out-2 .block {
+    width: auto;
+    margin: 5px;
+}
+
+.out-2 {
+    min-height: auto;
+    display: grid;
+    grid-template-areas: 
+    "block-1 block-2 block-3" 
+    "block-4 block-4 block-4"; 
+}
+
+.out-2 .block-1 {
+    grid-area: block-1;
+}
+
+.out-2 .block-2 {
+    grid-area: block-2;
+}
+
+.out-2 .block-3 {
+    grid-area: block-3;
+}
+
+.out-2 .block-4 {
+    grid-area: block-4;
+}
+
+@media (max-width: 800px){
+    .out-2 {
+        min-height: auto;
+        grid-template-areas: 
+        "block-1 block-2"
+        "block-3 block-4";
+    }
+}
+
+@media (max-width: 600px){
+    .out-2 {
+        grid-template-areas: 
+        "block-1 block-2"
+        "block-3 block-3"
+        "block-4 block-4";
+    }
+}
+
+/* ================ task 3 ========================= */
+
+.out-3 .block {
+    width: auto;
+    margin: 5px;
+}
+
+.out-3 {
+    min-height: auto;
+    display: grid;
+    grid-template-areas: 
+    "block-1 block-1 block-1" 
+    "block-2 block-3 block-4"; 
+}
+
+.out-3 .block-1 {
+    grid-area: block-1;
+}
+
+.out-3 .block-2 {
+    grid-area: block-2;
+}
+
+.out-3 .block-3 {
+    grid-area: block-3;
+}
+
+.out-3 .block-4 {
+    grid-area: block-4;
+}
+
+@media (max-width: 800px){
+    .out-3 {
+        grid-template-areas: 
+        "block-1 block-1"
+        "block-2 block-3"
+        "block-4 block-4";
+    }
+}
+
+@media (max-width: 600px){
+    .out-3 {
+        grid-template-areas: 
+        "block-1"
+        "block-2"
+        "block-3"
+        "block-4";
+    }
+
+    .out-3 .block-2 {
+        width: 33%;
+    }
+}
