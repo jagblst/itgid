@@ -26,7 +26,7 @@ function clear() {
 // CSS 
 
 function css() {
-    const source = './src/css/style.css';
+    const source = './src/css/*';
 
     return src(source)
         .pipe(changed(source))
