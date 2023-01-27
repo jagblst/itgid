@@ -4,15 +4,15 @@ document.querySelector('.profile-data').textContent = data.profile;
 /**
  * section data
  */
-let expirienceData = '';
+let experienceData = '';
 experience.forEach(item => {
-    expirienceData += `<section class="mb-5">`;
-    expirienceData += ` <h4 class="company-name mb-2">${item.company} - ${item.city}, <i>${item.from} - ${item.to}</i></h4>`;
-    expirienceData += `<h5>${item.position}</h5>`;
-    expirienceData += `<p>${item.description}</p>`;
-    expirienceData += `</section>`;
+    experienceData += `<section class="mb-5">`;
+    experienceData += ` <h4 class="company-name mb-2">${item.company} - ${item.city}, <i>${item.from} - ${item.to}</i></h4>`;
+    experienceData += `<h5>${item.position}</h5>`;
+    experienceData += `<p>${item.description}</p>`;
+    experienceData += `</section>`;
 });
-document.querySelector('.experience-list').innerHTML = expirienceData;
+document.querySelector('.experience-list').innerHTML = experienceData;
 
 /**
  * contact data
