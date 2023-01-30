@@ -106,9 +106,9 @@ document.querySelector('.b-12').onclick = t12;
 // При нажатии кнопки .b-13 выполняется t13. Функция получает из input.i-13-1 и .i-13-2 числа в переменные a, b. После чего в .out-13 выводит их сумму. Преобразовывайте a, b в числа!!!!
 
 function t13() {
-    let a = document.querySelector('.i-13-1').value;
-    let b = document.querySelector('.i-13-2').value;
-    document.querySelector('.out-13').innerHTML = +a + +b;
+    let a = +document.querySelector('.i-13-1').value;
+    let b = +document.querySelector('.i-13-2').value;
+    document.querySelector('.out-13').innerHTML = a + b;
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -168,9 +168,9 @@ document.querySelector('.b-18').onclick = t18;
 // По нажатию кнопки .b-19 функция t19 дожна в out-19 вывести сумму двух отрицательных чисел из input .i-19-1 и .i-19-2. 
 
 function t19() {
-    let num1 = document.querySelector('.i-19-1').value;
-    let num2 = document.querySelector('.i-19-2').value;
-    document.querySelector('.out-19').innerHTML = +num1 + +num2;
+    let num1 = +document.querySelector('.i-19-1').value;
+    let num2 = +document.querySelector('.i-19-2').value;
+    document.querySelector('.out-19').innerHTML = num1 + num2;
 }
 
 document.querySelector('.b-19').onclick = t19;
