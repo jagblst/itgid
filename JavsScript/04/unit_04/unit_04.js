@@ -2,7 +2,7 @@
 // При нажатии (click) на .b-1 запускайте f1, которая выводите в .out-1 число 1.
 
 function f1() {
-
+    document.querySelector('.out-1').innerHTML = 1;
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -12,7 +12,7 @@ document.querySelector('.b-1').onclick = f1;
 // При нажатии (click) на .i-2 запускайте f2, которая выводите в .out-2 число 2. Т.е. как видите, мы можем повесить клик на любой элемент.
 
 function f2() {
-
+    document.querySelector('.out-2').innerHTML = 2;
 }
 
 document.querySelector('.i-2').onclick = f2;
@@ -22,7 +22,7 @@ document.querySelector('.i-2').onclick = f2;
 //  При нажатии (click) на .p-3 запускайте f3, которая выводите в .out-3 число 3. Т.е. как видите, мы можем повеcить клик на любой элемент.
 
 function f3() {
-
+    document.querySelector('.out-3').innerHTML = 3;
 }
 
 document.querySelector('.p-3').onclick = f3;
