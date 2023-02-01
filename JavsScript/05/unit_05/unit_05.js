@@ -5,7 +5,11 @@
 
 
 function t1() {
-
+    let res = '';
+	for (let i = 1; i < 17; i++ ){
+		res += `${i}_`;
+	}    
+	document.querySelector('.out-1').innerHTML = res;
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -16,7 +20,11 @@ document.querySelector('.b-1').onclick = t1;
 //Разделитель - нижнее подчеркивание. Задача решается с помощью цикла.
 
 function t2() {
-
+    let res = '';
+	for (let i = 12; i < 39; i += 2 ){
+		res += `${i}_`;
+	}    
+	document.querySelector('.out-2').innerHTML = res;
 }
 
 document.querySelector('.b-2').onclick = t2;
@@ -28,7 +36,11 @@ document.querySelector('.b-2').onclick = t2;
 // Разделитель - нижнее подчеркивание. Задача решается с помощью цикла.
 
 function t3() {
-
+    let res = '';
+	for (let i = 25; i > 6; i-- ){
+		res += `${i}_`;
+	}    
+	document.querySelector('.out-3').innerHTML = res;
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -40,7 +52,11 @@ document.querySelector('.b-3').onclick = t3;
 
 
 function t4() {
-
+    let res = '';
+	for (let i = 77; i > 34; i -= 3 ){
+		res += `${i}_`;
+	}    
+	document.querySelector('.out-4').innerHTML = res;
 }
 
 document.querySelector('.b-4').onclick = t4;
@@ -52,7 +68,11 @@ document.querySelector('.b-4').onclick = t4;
 // от 1 до 17 c шагом 1. Разделитель - знак подчеркивания и звездочка (если число нечетное, и две звездочки если четное). Задача решается с помощью цикла.
 
 function t5() {
-
+    let res = '';
+	for (let i = 1; i < 18; i++ ){
+		res += i % 2 == 0 ? `${i}_**` : `${i}_*`;
+	}    
+	document.querySelector('.out-5').innerHTML = res;
 }
 
 document.querySelector('.b-5').onclick = t5;
@@ -69,7 +89,12 @@ document.querySelector('.b-5').onclick = t5;
 //
 
 function t6() {
-
+    let num = +document.querySelector('.i-6').value;
+    let res = '';
+	for (let i = 0; i < num; i++ ){
+		res += '******<br>';
+	}    
+	document.querySelector('.out-6').innerHTML = res;
 }
 
 document.querySelector('.b-6').onclick = t6;
@@ -83,7 +108,12 @@ document.querySelector('.b-6').onclick = t6;
 // Задача решается с помощью цикла.
 
 function t7() {
-
+    let num = +document.querySelector('.i-7').value;
+    let res = '';
+	for (let i = num; i >= 0; i-- ){
+		res += `${i}_`;
+	}    
+	document.querySelector('.out-7').innerHTML = res;
 }
 
 document.querySelector('.b-7').onclick = t7;
@@ -98,7 +128,13 @@ document.querySelector('.b-7').onclick = t7;
 // Задача решается с помощью цикла.
 
 function t8() {
-
+    let num1 = +document.querySelector('.i-81').value;
+    let num2 = +document.querySelector('.i-82').value;
+    let res = '';
+	for (let i = num1; i <= num2; i++ ){
+		res += `${i}_`;
+	}    
+	document.querySelector('.out-8').innerHTML = res;
 }
 
 document.querySelector('.b-8').onclick = t8;
@@ -115,7 +151,18 @@ document.querySelector('.b-8').onclick = t8;
 // цикл - один
 
 function t9() {
-
+    let num1 = +document.querySelector('.i-91').value;
+    let num2 = +document.querySelector('.i-92').value;
+    let res = '';
+    if ( num1 > num2 ) {
+        let t = num1;
+        num1 = num2;
+        num2 = t;
+    }
+    for (let i = num1; i <= num2; i++ ){
+		res += `${i}_`;
+	}    
+	document.querySelector('.out-9').innerHTML = res;
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -126,7 +173,11 @@ document.querySelector('.b-9').onclick = t9;
 // Разделитель - знак подчеркивания. Задача решается через цикл, а четность - через шаг (равный 2).
 
 function t10() {
-
+    let res = '';
+	for (let i = 1950; i <= 1970; i += 2 ){
+		res += `${i}_`;
+	}    
+	document.querySelector('.out-10').innerHTML = res;
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -141,7 +192,12 @@ document.querySelector('.b-10').onclick = t10;
 
 
 function t11() {
-
+    let divs11 = document.querySelectorAll('.div-11');
+    let res = '';
+	for (let i = 0; i < divs11.length; i++ ){
+		res += `${divs11[i].innerHTML}_`;
+	}    
+	document.querySelector('.out-11').innerHTML = res;
 }
 
 document.querySelector('.b-11').onclick = t11;
