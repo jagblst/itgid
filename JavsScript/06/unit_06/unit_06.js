@@ -6,6 +6,14 @@
 // <p>где звездочкa рисуются с помощью внутреннего цикла от 0 до 3, а _ с помощью внешнего.</p>
 
 function t1() {
+    let res = ``;
+    for ( let i = 0; i < 3; i++ ) {
+        for ( let k = 0; k < 3; k++ ) {
+            res += `*`;
+        }
+        res += `_`;
+    } 
+    document.querySelector('.out-1').innerHTML = res;
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -20,7 +28,15 @@ document.querySelector('.b-1').onclick = t1;
 // *_*_*_
 // <p>Решить задачу с помощью вложенных циклов. Внешний цикл выводит цифру и перенос строки br, внутренний - *_, и после этого внешний - знак переноса.</p>
 function t2() {
-
+    let res = ``;
+    for ( let i = 1; i < 4; i++ ) {
+        res += `${i}<br>`;
+        for ( let k = 0; k < 3; k++ ) {
+            res += `*_`;
+        }
+        res += `<br>`;
+    } 
+    document.querySelector('.out-2').innerHTML = res;
 }
 
 document.querySelector('.b-2').onclick = t2;
@@ -35,7 +51,14 @@ document.querySelector('.b-2').onclick = t2;
 
 // <p>Решить задачу с помощью вложенных циклов. Внутренний цикл выводит *_,  внешний цикл выводит перенос строки br.</p>
 function t3() {
-
+    let res = ``;
+    for ( let i = 0; i < 4; i++ ) {
+        for ( let k = 0; k < 3; k++ ) {
+            res += `*_`;
+        }
+        res += `<br>`;
+    } 
+    document.querySelector('.out-3').innerHTML = res;
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -45,7 +68,14 @@ document.querySelector('.b-3').onclick = t3;
 // 1_1*2*3*4*5*2_1*2*3*4*5*3_1*2*3*4*5*
 // Внешний цикл выводит цифру и _, а внутренний выводит от 1 до 5 с *
 function t4() {
-
+    let res = ``;
+    for ( let i = 1; i < 4; i++ ) {
+        res += `${i}_`;
+        for ( let k = 1; k < 6; k++ ) {
+            res += `${k}*`;
+        }
+    } 
+    document.querySelector('.out-4').innerHTML = res;
 }
 
 document.querySelector('.b-4').onclick = t4;
@@ -60,7 +90,14 @@ document.querySelector('.b-4').onclick = t4;
 
 // <p>Вложенный цикл в зависимости от четного или нет k (счетчика цикла) рисует или 0 или 1. Внешний цикл - br.</p>
 function t5() {
-
+    let res = ``;
+    for ( let i = 1; i < 4; i++ ) {
+        for ( let k = 1; k < 7; k++ ) {
+            res += k % 2 === 0 ? 0 : 1;
+        }
+        res += `<br>`;
+    } 
+    document.querySelector('.out-5').innerHTML = res;
 }
 
 document.querySelector('.b-5').onclick = t5;
@@ -75,7 +112,16 @@ document.querySelector('.b-5').onclick = t5;
 
 
 function t6() {
-
+    let res = ``;
+    for ( let i = 1; i < 4; i++ ) {
+        for ( let k = 1; k < 7; k++ ) {
+            if (k === 1 || k === 5) res += 1;
+            if (k === 2 || k === 4) res += 0;
+            if (k === 3 || k === 6) res += `x`;
+        }
+        res += `<br>`;
+    } 
+    document.querySelector('.out-6').innerHTML = res;
 }
 
 document.querySelector('.b-6').onclick = t6;
