@@ -91,9 +91,9 @@ document.querySelector('.b-4').onclick = t4;
 // <p>Вложенный цикл в зависимости от четного или нет k (счетчика цикла) рисует или 0 или 1. Внешний цикл - br.</p>
 function t5() {
     let res = ``;
-    for ( let i = 1; i < 4; i++ ) {
-        for ( let k = 1; k < 7; k++ ) {
-            res += k % 2 === 0 ? 0 : 1;
+    for ( let i = 0; i < 3; i++ ) {
+        for ( let k = 0; k < 6; k++ ) {
+            res += k % 2 === 0 ? 1 : 0;
         }
         res += `<br>`;
     } 
@@ -113,11 +113,17 @@ document.querySelector('.b-5').onclick = t5;
 
 function t6() {
     let res = ``;
-    for ( let i = 1; i < 4; i++ ) {
-        for ( let k = 1; k < 7; k++ ) {
-            if (k === 1 || k === 5) res += 1;
-            if (k === 2 || k === 4) res += 0;
-            if (k === 3 || k === 6) res += `x`;
+    for ( let i = 0; i < 3; i++ ) {
+        for ( let k = 0; k < 6; k++ ) {
+            if (k === 0 || k === 4) {
+                res += 1;
+            }  
+            if (k === 1 || k === 3) {
+                res += 0;
+            } 
+            if (k === 2 || k === 5) {
+                res += `x`;
+            } 
         }
         res += `<br>`;
     } 
@@ -136,7 +142,14 @@ document.querySelector('.b-6').onclick = t6;
 // ****
 
 function t7() {
-
+    let res = ``;
+    for ( let i = 1; i < 5; i++ ) {
+        for ( let k = 0; k < i; k++ ) {
+            res += `*`;
+        }
+        res += `<br>`;
+    } 
+    document.querySelector('.out-7').innerHTML = res;
 }
 
 document.querySelector('.b-7').onclick = t7;
@@ -153,7 +166,14 @@ document.querySelector('.b-7').onclick = t7;
 // *
 
 function t8() {
-
+    let res = ``;
+    for ( let i = 5; i > 0; i-- ) {
+        for ( let k = 0; k < i; k++ ) {
+            res += `*`;
+        }
+        res += `<br>`;
+    } 
+    document.querySelector('.out-8').innerHTML = res;
 }
 
 document.querySelector('.b-8').onclick = t8;
@@ -169,7 +189,14 @@ document.querySelector('.b-8').onclick = t8;
 // 1_2_3_4_5_
 
 function t9() {
-
+    let res = ``;
+    for ( let i = 0; i < 5; i++ ) {
+        for ( let k = 1; k < i + 2; k++ ) {
+            res += `${k}_`;
+        }
+        res += `<br>`;
+    } 
+    document.querySelector('.out-9').innerHTML = res;
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -186,7 +213,17 @@ document.querySelector('.b-9').onclick = t9;
 
 
 function t10() {
-
+    let res = ``;
+    for ( let i = 0; i < 5; i++ ) {
+        for ( let k = 1; k < 11; k++ ) {
+            if ( i === 0 && k < 10 ) {
+                res += 0;
+            }
+            res += `${10 * i + k}_`;
+        }
+        res += `<br>`;
+    } 
+    document.querySelector('.out-10').innerHTML = res;
 }
 
 document.querySelector('.b-10').onclick = t10;
