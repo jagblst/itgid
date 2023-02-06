@@ -3,7 +3,9 @@
 
 
 function f1() {
-
+  const one = document.querySelector('.out-1');
+  one.style.width = '200px';
+  one.style.height = '90px';
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -12,7 +14,8 @@ document.querySelector('.b-1').onclick = f1;
 // По нажатию на кнопку .b-2 функция f2, которая присваивает блоку .out-2 класс .bg-orange.
 
 function f2() {
-
+    const two = document.querySelector('.out-2');
+    two.classList.add('bg-orange');
 }
 
 document.querySelector('.b-2').onclick = f2;
@@ -22,7 +25,8 @@ document.querySelector('.b-2').onclick = f2;
 // По нажатию кнопки .b-3 запускайте функцию f3, которая удаляет у блока .out-3 класс .bg-orange.
 
 function f3() {
-
+    const three = document.querySelector('.out-3');
+    three.classList.remove('bg-orange');
 }
 
 document.querySelector('.b-3').onclick = f3;
@@ -30,9 +34,9 @@ document.querySelector('.b-3').onclick = f3;
 //  Task 4
 // По нажатию кнопки .b-4 запускайте функцию f4, которая делает toggle класса .bg-orange для блока out-4.
 
-
-function f4() {
-
+const four = document.querySelector('.out-4');
+function f4() { 
+    four.classList.toggle('bg-orange');
 }
 
 document.querySelector('.b-4').onclick = f4;
@@ -42,7 +46,8 @@ document.querySelector('.b-4').onclick = f4;
 // По нажатию .b-5 запускайте функцию f5, которая проверяет наличие класса .bg-orange у блока .out-4 (да, именно у out-4 ). Результат - true или false, выводите в .out-5.
 
 function f5() {
-
+    const five = document.querySelector('.out-5');
+    five.innerHTML = four.classList.contains('bg-orange');
 }
 
 document.querySelector('.b-5').onclick = f5;
@@ -52,7 +57,9 @@ document.querySelector('.b-5').onclick = f5;
 // По нажатию .b-6 запускайте функцию f6, которая выводит в .out-6 количество параграфов с классом .p-6.
 
 function f6() {
-
+    const six = document.querySelector('.out-6');
+    let paragraphs =  document.querySelectorAll('.p-6');
+    six.innerHTML = paragraphs.length;
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -64,7 +71,9 @@ document.querySelector('.b-6').onclick = f6;
 let blocks7 = document.querySelectorAll('.out-7');
 
 function f7() {
-    //внутри цикла blocks7[i].classList....
+    for ( let i = 0; i < blocks7.length; i++ ) {
+        blocks7[i].classList.add('bg-orange');
+    } 
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -76,7 +85,9 @@ document.querySelector('.b-7').onclick = f7;
 let blocks8 = document.querySelectorAll('.out-8');
 
 function f8() {
-    //внутри цикла blocks8[i].classList....
+    for ( let i = 0; i < blocks8.length; i++ ) {
+        blocks8[i].classList.toggle('bg-orange');
+    } 
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -86,7 +97,7 @@ document.querySelector('.b-8').onclick = f8;
 // Усложним предыдущие задачи. С помощью цикла повесим на блоки .out-9 событие клик. По клику должна выполняться функция f9. Функция, должна добавлять класс .bg-orange тому .out-9 на котором кликнули.
 
 function f9() {
-    //this.classList...  // все решается одной строкой
+    this.classList.add('bg-orange');
 }
 
 let div9 = document.querySelectorAll('.out-9');
@@ -99,14 +110,15 @@ for (let i = 0; i < div9.length; i++) {
 //  Task 10
 // Усложним предыдущие задачи. С помощью цикла повим на блоки .out-10 событие клик. По клику должна выполняться функция f10. Функция, должна делать toggle класса .bg-orange тому .out-10 на котором кликнули.
 
-//let div10 = тут получите все out-10
+let div10 = document.querySelectorAll('.out-10');
 
 function f10() {
-
+    this.classList.toggle('bg-orange');
 }
 
-// а тут цикл, похожий на предыдущее задание
-
+for (let i = 0; i < div10.length; i++) {
+    div10[i].onclick = f10;
+}
 
 
 //  Task 11
@@ -114,7 +126,9 @@ function f10() {
 
 
 function f11() {
-
+let div = document.createElement('div');
+div.innerHTML = 25;
+document.querySelector('.out-11').append(div);
 }
 
 document.querySelector('.b-11').onclick = f11;
