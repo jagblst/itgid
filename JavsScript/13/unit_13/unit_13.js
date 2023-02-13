@@ -9,7 +9,7 @@ function f1() {
         "five": 20
     };
     document.querySelector('.out-1').innerHTML = a1.two;
-    //return ...
+    return a1.two;
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -26,8 +26,7 @@ function f2() {
         "two": "mahai",
         "five": "hi"
     };
-
-    // return
+    return a2.five;
 }
 
 document.querySelector('.b-2').onclick = () => {
@@ -49,7 +48,7 @@ function f3() {
         "odd": "hi",
         "mix": "mix"
     };
-    // return
+    return `${a3.five} ${a3.odd}`;
 }
 
 document.querySelector('.b-3').onclick = () => {
@@ -71,8 +70,11 @@ let a4 = {
     "mix": "mix"
 };
 function f4() {
-
-    // return out;
+    let out = '';
+    for (let key in a4) {
+        out += `${key} ${a4[key]} <br>`;
+    }
+    return out;
 }
 
 document.querySelector('.b-4').onclick = () => {
@@ -85,10 +87,11 @@ document.querySelector('.b-4').onclick = () => {
 
 function f5(arr, block) {
     let out = '';
-    // цикл
-    // формат вывода `${key} : ${arr[key]} <br>`;
-    //
-    // тут вывод в блок block
+    for (let key in arr) {
+        out += `${key} : ${arr[key]} <br>`;
+    }
+    
+   document.querySelector(block).innerHTML = out;
 }
 
 // давайте протестируем f5
@@ -111,7 +114,10 @@ let a6 = {
 };
 
 function f6() {
-
+    let key = document.querySelector('.i-61').value;
+    let val = document.querySelector('.i-62').value;
+    a6[key] = val;
+    f5(a6, '.out-6');
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -126,7 +132,9 @@ let a7 = {
 
 
 function f7() {
-
+    let out = document.querySelector('.out-7');
+    let key = document.querySelector('.i-7').value;
+    key in a7 ? out.innerHTML = 1 : out.innerHTML = 0;
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -140,7 +148,9 @@ let a8 = {
 };
 
 function f8() {
-
+    let out = document.querySelector('.out-8');
+    let key = document.querySelector('.i-8').value;
+    key in a8 ? out.innerHTML = a8[key] : out.innerHTML = 0;
 }
 
 document.querySelector('.b-8').onclick = f8;
