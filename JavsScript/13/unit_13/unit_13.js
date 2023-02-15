@@ -167,7 +167,12 @@ let a9 = {
 };
 
 function f9() {
-
+    let val = document.querySelector('.i-9').value;
+    let out = '';
+    for ( let key in a9) {
+        a9[key] == val ? out += `${key} ` : out;
+    }
+    document.querySelector('.out-9').innerHTML = out;
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -175,10 +180,13 @@ document.querySelector('.b-9').onclick = f9;
 // Task 10
 // Давайте напишем полезную функцию f10, которая проверяет есть ли значение в ассоциативном массиве. Фукнция должна возвращать true если есть, и false если нет. Массив и значение передавать функции в качестве параметров.
 
-function f10(arr, val) {
-
-    //return true;
-    //return false;
+function f10(arr, val) {   
+    for (let key in arr) {
+      if (arr[key] == val) {
+        return true;
+      }
+    }
+    return false;
 }
 
 document.querySelector('.b-10').onclick = () => {
@@ -203,6 +211,10 @@ let a11 = {
 };
 
 function f11() {
+    let key = document.querySelector('.i-11').value;
+    delete a11[key];
+    // console.log(a11);
+    f5(a11, '.out-11');
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -219,7 +231,14 @@ let a12 = {
 };
 
 function f12() {
-
+    let val = document.querySelector('.i-12').value;
+    for (let key in a12) {
+        if (a12[key] == val) {
+            delete a12[key];
+        }
+    }
+    // console.log(a12);
+    f5(a12, '.out-12');
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -235,7 +254,13 @@ let a13 = {
 };
 
 function f13() {
-
+    let sum = 0;
+    for (let key in a13){
+       if (typeof a13[key] === 'number') {
+            sum += a13[key];
+       } 
+    }
+    document.querySelector('.out-13').innerHTML = sum;
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -252,7 +277,11 @@ let a14 = {
 };
 
 function f14() {
-
+    let out = '';
+    for (let key in a14){
+        out += `${a14[key][0]} `;
+    }
+    document.querySelector('.out-14').innerHTML = out;
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -270,7 +299,13 @@ let a15 = {
 };
 
 function f15() {
-
+    let out = '';
+    for (let key in a15){
+        for (let value of a15[key]){
+            out += `${value} `;
+        }
+    }
+    document.querySelector('.out-15').innerHTML = out;
 }
 
 document.querySelector('.b-15').onclick = f15;
@@ -294,7 +329,11 @@ let a16 = {
 }
 
 function f16() {
-
+    let out = '';
+    for (let key in a16){
+        out += `${a16[key].name} `;
+    }
+    document.querySelector('.out-16').innerHTML = out;
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -319,7 +358,13 @@ let a17 = {
 }
 
 function f17() {
-
+    let out = '';
+    for (let key in a17){
+        if (a17[key].age > 30) {
+            out += `${a17[key].name} `;
+        }
+    }
+    document.querySelector('.out-17').innerHTML = out;
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -334,9 +379,19 @@ let a18 = {
 }
 
 function f18() {
-
+    let branch = document.querySelector('.i-18').value;
+    let out = '';
+    for (let key in a18){
+        if (branch == key) {
+            for (let value of a18[key]){
+                out += `${value} `;
+            }
+        }
+    }
+    document.querySelector('.out-18').innerHTML = out;
 }
 
+document.querySelector('.b-18').onclick = f18;
 // Task 19
 // При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19. Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
 // Пользователь ввел Lisova - вывод red, ввел Obolon - вывод blue.
@@ -348,7 +403,17 @@ let a19 = {
 }
 
 function f19() {
-
+    let station = document.querySelector('.i-19').value;
+    station = station.toLowerCase();
+    let out = '';
+    for (let key in a19){
+        for (let value of a19[key]){
+            if (station == value.toLowerCase()){
+                out += key;
+            } 
+        }
+    }    
+    document.querySelector('.out-19').innerHTML = out;
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -363,7 +428,15 @@ let a20 = {
 }
 
 function f20() {
-
+    let out = '';
+    for (let key in a20) {
+        for (let value of a20[key]) {
+            if (value[1] == 2) {
+                out += `${value[0]} `;
+            }
+        }
+    }
+    document.querySelector('.out-20').innerHTML = out;
 }
 
-document.querySelector('.b-20').onclick = f20
+document.querySelector('.b-20').onclick = f20;
