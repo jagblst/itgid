@@ -99,7 +99,12 @@ document.querySelector('.b-6').addEventListener('click', f6);
 let a7 = [{ id : 23, name: 'Ivan'}, {id: 45, name : 'Petr'}];
 
 function f7() {
-
+    let res = {};
+    for (let item of a7) {
+        res[item.id] = item.name;
+    }
+    a7 = res;
+    return a7;
 }
 
 document.querySelector('.b-7').addEventListener('click', ()=>{
@@ -113,7 +118,12 @@ document.querySelector('.b-7').addEventListener('click', ()=>{
 let a8 = [ { id : 23, name: 'Ivan'}, {id: 45, name : 'Petr'}];
 
 function f8() {
-
+    let res = [];
+    for (let item of a8){
+        res.push(item.id);
+    }
+    a8 = res;
+    return a8;
 }
 
 document.querySelector('.b-8').addEventListener('click', ()=>{
@@ -126,7 +136,11 @@ document.querySelector('.b-8').addEventListener('click', ()=>{
 let a9 = [ [4,3,2], [2,5], [0,0,0,0,0]];
 
 function f9() {
-
+    let max = 0;
+    for (let i = 0; i < a9.length; i++){
+        a9[i].length > max ? max = a9[i].length - 1 : max;
+    }
+    return max;
 }
 
 document.querySelector('.b-9').addEventListener('click', ()=>{
@@ -139,7 +153,12 @@ document.querySelector('.b-9').addEventListener('click', ()=>{
 let a10 = [4, 6, 9, 'Hello'];
 
 function f10() {
-
+    let res = {};
+    for (let item of a10) {
+        res[item] = item;
+    }
+    a10 = res;
+    return a10;
 }
 
 document.querySelector('.b-10').addEventListener('click', () => {
