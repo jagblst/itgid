@@ -4,7 +4,11 @@
 let a1 = [5,7,9, 11, 13, 15];
 
 function f1() {
-
+    let out = ``;
+    for (let i = 0; i < a1.length; i++){
+        out += `${a1[i]} `;
+    }
+    document.querySelector('.out-1').innerHTML = out;
 }
 
 document.querySelector('.b-1').addEventListener('click', f1);
@@ -15,7 +19,11 @@ document.querySelector('.b-1').addEventListener('click', f1);
 let a2 = [5,7,9, 11, 13, 15];
 
 function f2() {
-
+    let out = ``;
+    for (let i = 0; i < a2.length; i++){
+        out += `${i} ${a2[i]} `;
+    }
+    document.querySelector('.out-2').innerHTML = out;
 }
 
 document.querySelector('.b-2').addEventListener('click', f2);
@@ -24,7 +32,10 @@ document.querySelector('.b-2').addEventListener('click', f2);
 //При нажатии .b-3 выполняете функцию f3. Функция получает div.out-3 со страницы с помощью getElementsByClassName и в каждый записывает число 3, перезаписывая содержимое div.
 
 function f3() {
-
+   let divs = document.getElementsByClassName('out-3');
+   for (let i = 0; i < divs.length; i++) {
+        divs[i].innerHTML = 3;
+    }
 }
 
 document.querySelector('.b-3').addEventListener('click', f3);
@@ -34,7 +45,10 @@ document.querySelector('.b-3').addEventListener('click', f3);
 //При нажатии .b-4 выполняете функцию f4. Функция получает div.out-4 со страницы с помощью querySelectorAll и в каждый дописывает число 4.
 
 function f4() {
-
+    let divs = document.querySelectorAll('.out-4');
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].innerHTML += 4;
+    }
 }
 
 document.querySelector('.b-4').addEventListener('click', f4);
@@ -45,7 +59,11 @@ document.querySelector('.b-4').addEventListener('click', f4);
 let a5 = [3,4,5,2,1,7,8,2,4,6,8,11,23,17];
 
 function f5() {
-
+    let arr = [];
+    for ( let num of a5) {
+        num > 7 ? arr.push(num) : num;
+    }
+    return arr;
 }
 
 document.querySelector('.b-5').addEventListener('click', ()=> {
@@ -58,7 +76,19 @@ document.querySelector('.b-5').addEventListener('click', ()=> {
 let a6 = [[1,2], [3,4], [5,6]];
 
 function f6() {
-
+    let arr = [];
+    let out = '';
+    for ( let i = 0; i < a6.length; i++){
+        for ( let j = 0; j < a6[i].length; j++){
+            arr.push(a6[i][j]);
+        }
+    }
+    for (let num of arr){
+        out += `${num} `;
+    }
+    a6 = arr;
+    // console.log(a6);
+    document.querySelector('.out-6').innerHTML = out;
 }
 
 document.querySelector('.b-6').addEventListener('click', f6);
