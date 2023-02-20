@@ -176,7 +176,11 @@ let a11 = {
 }
 
 function f11() {
-
+    let out = ``;
+    for (let item in a11){
+        a11[item] > 10 ? out += `${a11[item]} ` : item;
+    }
+    document.querySelector('.out-11').innerHTML = out;
 }
 
 document.querySelector('.b-11').addEventListener('click', f11);
@@ -187,7 +191,11 @@ document.querySelector('.b-11').addEventListener('click', f11);
 let a12 = [4,5,6,7];
 
 function f12() {
-
+    let out = ``;
+    for ( let item of a12){
+        out += `${item} `;
+    }
+    document.querySelector('.out-12').innerHTML = out;
 }
 
 document.querySelector('.b-12').addEventListener('click', f12);
@@ -199,7 +207,11 @@ document.querySelector('.b-12').addEventListener('click', f12);
 let a13 = 'testone';
 
 function f13() {
-
+    let out = ``;
+    for ( let item of a13){
+        out += `${item} `;
+    }
+    document.querySelector('.out-13').innerHTML = out;
 }
 
 document.querySelector('.b-13').addEventListener('click', f13);
@@ -212,7 +224,11 @@ document.querySelector('.b-13').addEventListener('click', f13);
 let a14 = new Set([4,5,6]);
 
 function f14() {
-
+    let out = ``;
+    for ( let item of a14){
+        out += `${item} `;
+    }
+    document.querySelector('.out-14').innerHTML = out;
 }
 
 document.querySelector('.b-14').addEventListener('click', f14);
@@ -222,7 +238,10 @@ document.querySelector('.b-14').addEventListener('click', f14);
 
 
 function f15() {
-
+    let divs = document.querySelectorAll('.out-15');
+    for ( let item of divs){
+        item.innerHTML = 15;
+    }
 }
 
 document.querySelector('.b-15').addEventListener('click', f15);
