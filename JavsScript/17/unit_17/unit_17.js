@@ -35,7 +35,10 @@ document.querySelector('.b-1').onclick = () => {
 let a2 = [2, 3, 4, 5, 10, 11, 12];
 
 function t2() {
-
+    a2_res = a2.map(elem => {
+        return elem ** 2;
+    });
+    return a2_res;
 }
 
 document.querySelector('.b-2').onclick = () => {
@@ -50,7 +53,10 @@ document.querySelector('.b-2').onclick = () => {
 let a3 = [4, "3", 6, 7, "12", 34, "56", 78, 90, 11];
 
 function t3() {
-
+    a3_res = a3.map(elem => { 
+        return +elem;
+    });
+    return a3_res;
 }
 
 document.querySelector('.b-3').onclick = () => {
@@ -64,7 +70,8 @@ document.querySelector('.b-3').onclick = () => {
 let a4 = [4, "3", 6, 7, "12", 34, "56", 78, 90, 11];
 
 function t4() {
-
+    a4_res = a4.filter(elem => typeof elem === 'number');
+    return a4_res;
 }
 
 document.querySelector('.b-4').onclick = () => {
@@ -79,7 +86,8 @@ document.querySelector('.b-4').onclick = () => {
 let a5 = [3, 14, 15, 92, '6'];
 
 function t5() {
-
+    a5_res = a5.filter(elem => typeof elem === 'number' && elem % 2 === 0);
+    return a5_res;
 }
 
 document.querySelector('.b-5').onclick = () => {
@@ -94,7 +102,8 @@ document.querySelector('.b-5').onclick = () => {
 let a6 = [3, 14, 15, 92, "6", "5", "hello", 32];
 
 function t6() {
-
+    a6_res = a6.filter(elem => typeof elem === 'number' && elem > 14);
+    return a6_res;
 }
 
 document.querySelector('.b-6').onclick = () => {
@@ -108,7 +117,8 @@ document.querySelector('.b-6').onclick = () => {
 let a7 = ['Alto`s Adventure', 'Angry Birds 2', 'Anno 2205', 'Assassin`s Creed Chronicles'];
 
 function t7() {
-
+    a7_res = a7.map(elem => elem.toLowerCase());
+    return a7_res;
 }
 
 document.querySelector('.b-7').onclick = () => {
@@ -121,7 +131,9 @@ document.querySelector('.b-7').onclick = () => {
 let a8 = [3, 14, 15, 92, 7, 32, 59];
 
 function t8() {
-
+    a8_res = [];
+    a8.filter((elem, index) => elem % 2 === 0 && a8_res.push(index));
+    return a8_res;
 }
 
 document.querySelector('.b-8').onclick = () => {
@@ -136,7 +148,10 @@ document.querySelector('.b-8').onclick = () => {
 let a9 = ['Quantum Break', 'Gears of War 4', 'Mass Effect: Andromeda', 'Far Cry Primal'];
 
 function t9() {
-
+    let t = [];
+    a9.forEach(elem => t.push(elem.toLowerCase()));
+    a9 = t;
+    return a9;
 }
 
 document.querySelector('.b-9').onclick = () => {
@@ -151,8 +166,10 @@ document.querySelector('.b-9').onclick = () => {
 let a10 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
 
 function t10() {
-
-
+    t = [];
+    a10.forEach(elem => elem < 0 ? t.push(0) : t.push(elem));
+    a10 = t;
+    return a10;
 }
 
 document.querySelector('.b-10').onclick = () => {
@@ -165,8 +182,8 @@ document.querySelector('.b-10').onclick = () => {
 let a11 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
 
 function t11() {
-
-
+    a11_res = a11.filter((_, index) => index % 2 === 0);
+    return a11_res;
 }
 
 document.querySelector('.b-11').onclick = () => {
@@ -180,8 +197,7 @@ let a12 = [2, 13, 14, -7, 9, 5, 0, -2, 14];
 // a12 = 8; // на этой переменной можно проверить работает или нет ваша функция.
 
 function t12() {
-
-
+   return Array.isArray(a12);
 }
 
 document.querySelector('.b-12').onclick = () => {
@@ -196,8 +212,7 @@ let a13_num = 9;
 
 
 function t13() {
-
-
+    return a13.includes(a13_num);
 }
 
 document.querySelector('.b-13').onclick = () => {
@@ -212,8 +227,7 @@ let a14_sym = 'e';
 
 
 function t14() {
-
-
+    return a14.includes(a14_sym.toLowerCase()) || a14.includes(a14_sym.toUpperCase());
 }
 
 document.querySelector('.b-14').onclick = () => {
@@ -257,8 +271,8 @@ let a15 = [
 
 
 function t15() {
-
-
+    a15_res = a15.filter(elem => elem.pnum.length === 6);
+    return a15_res;
 }
 
 document.querySelector('.b-15').onclick = () => {
