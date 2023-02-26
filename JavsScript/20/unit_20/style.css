@@ -18,7 +18,7 @@ section {
 .out-11 {
     display: flex;
     justify-content: space-between;
-
+    flex-wrap: wrap;
 }
 
 .keyboard {

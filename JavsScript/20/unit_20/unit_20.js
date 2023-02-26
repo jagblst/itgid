@@ -4,6 +4,8 @@
 
 function t1(event) {
     console.log(event);
+    document.querySelector('.out-1').textContent = event.key;
+    return event.key;
 }
 
 document.querySelector('.i-1').onkeydown = t1;
@@ -13,7 +15,7 @@ document.querySelector('.i-1').onkeydown = t1;
 
 function t2(event) {
     console.log(event);
-
+    document.querySelector('.out-2').textContent = event.keyCode;
 }
 
 document.querySelector('.i-2').onkeypress = t2;
@@ -23,7 +25,7 @@ document.querySelector('.i-2').onkeypress = t2;
 
 
 function t3(event) {
-
+    document.querySelector('.out-3').textContent = !(event.keyCode > 47 && event.keyCode < 58);
 }
 
 document.querySelector('.i-3').onkeypress = t3;
@@ -34,7 +36,7 @@ document.querySelector('.i-3').onkeypress = t3;
 
 function t4(event) {
     console.log(event.keyCode);
-
+    (event.keyCode < 65 || event.keyCode > 90) ? document.querySelector('.out-4').textContent += event.key : null;
 }
 
 document.querySelector('.i-4').onkeypress = t4;
@@ -44,7 +46,7 @@ document.querySelector('.i-4').onkeypress = t4;
 
 function t5(event) {
     console.log(event);
-
+    event.key === "Shift" ? null : document.querySelector('.out-5').textContent += event.key.toUpperCase();
 }
 
 document.querySelector('.i-5').onkeydown = t5;
@@ -52,8 +54,10 @@ document.querySelector('.i-5').onkeydown = t5;
 // Task 6 ============================================
 /*  Дан input .i-6. Напишите функцию t6, которая позволяет вводить в i-6 только символы в нижнем регистре. Т.е. мы до функции создаем строку. Внутри функции проверяем код символа. Если символ - в нижнем регистре - добавляем в строку. Потом принудительно присваиваем строку в value input i-6. Чтобы блокировать стандартный вывод в input в конце функции пишем return false;  */
 
-function t6() {
-    // return false;
+
+function t6(event) {
+    event.key === event.key.toUpperCase() ? null : document.querySelector('.i-6').value += event.key;
+    return false;
 }
 
 document.querySelector('.i-6').onkeypress= t6;
@@ -65,7 +69,7 @@ document.querySelector('.i-6').onkeypress= t6;
 const a7 = ['a', 'z', 'x', 'w', 'y', 't'];
 
 function t7() {
-
+    document.querySelector('.out-7').textContent = a7[Math.floor(Math.random() * a7.length)];
 }
 
 document.querySelector('.i-7').onkeydown= t7;
@@ -80,9 +84,9 @@ const a8 = {
 }
 
 function t8(event) {
-    // 1. Получаем из event введенный символ
-    // 2. Проверяем наличие такого ключа в a8 - уже делали это раньше!!!!
-    // 3. Если есть дописываем в out-8 символ из массива a8. Если нет - введенный символ.
+  let key = event.key;
+  a8[key] !== undefined ? key = a8[key] : key;
+  document.querySelector('.out-8').innerHTML += key;   
 }
 
 document.querySelector('.i-8').onkeydown= t8;
@@ -91,8 +95,12 @@ document.querySelector('.i-8').onkeydown= t8;
 // Task 9 ============================================
 /* Дан input .i-9. Напишите функцию t9, выводит в .out-9 количество (число) нажатых клавиш стрелка вниз. */
 
+let count = 0;
+
 function t9(event) {
     console.log(event);
+    event.key === "ArrowDown" ? count++ : count;
+    document.querySelector('.out-9').innerHTML = count; 
 }
 
 document.querySelector('.i-9').onkeydown = t9;
@@ -106,7 +114,10 @@ let w = 75;
 
 function t10(event) {
     // увеличиваем  h, w, потом присваиваем как свойства...
-
+    event.key === "ArrowLeft" || event.key === "ArrowRight" ? w++ : w;
+    event.key === "ArrowDown" || event.key === "ArrowUp" ? h++ : h;
+    document.querySelector('.block-10').style.width = w + 'px';
+    document.querySelector('.block-10').style.height = h + 'px';
 }
 
 document.querySelector('.i-10').onkeydown = t10;
@@ -120,9 +131,23 @@ document.querySelector('.i-10').onkeydown = t10;
 5. Самостоятельно добавьте клавишу alt, enter.
 */
 
-function t11(event) {
-    console.log(event.key);
+const kbrd = document.querySelectorAll('.keyboard');
+const a11 = {
+    ' ': 'space',
+    Enter: 'enter',
+    Control: 'ctrl',
+    Alt: 'alt',
+} 
 
+function t11(event) { 
+    for (let item of kbrd) {
+        item.classList.remove('active');
+    }
+    let key = event.key;
+    console.log(key);
+    a11[key] !== undefined ? key = a11[key] : key;
+    let button = document.querySelector(`.keyboard[data="${key}"]`);
+    button ? button.classList.add('active') : button; 
 }
 
 document.querySelector('.i-11').onkeydown = t11;
