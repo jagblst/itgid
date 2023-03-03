@@ -13,16 +13,31 @@ function queryString(param) {
     return path.slice(0, -1);
 }
 
+function getFunc(out) {
+    fetch(queryString(param))
+      .then(data => data.text())
+      .then(data => document.querySelector(out).innerHTML = data)
+}
+  
+function postFunc(out) {
+    fetch(queryString(param), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: queryString(param),
+    })
+        .then(response => response.text())
+        .then(response => document.querySelector(out).innerHTML = response)
+}
 
 // Task 1 ============================================
 /* Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. Выведите в out-1 результат. Запускаться функция должна по нажатию b-1. */
 
 function t1() {
     param.action = 1;
-
-    fetch(queryString(param))
-    .then(data => data.text())
-    .then(data => document.querySelector('.out-1').innerHTML = data)
+    
+    getFunc('.out-1');
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -32,10 +47,8 @@ document.querySelector('.b-1').onclick = t1;
 
 function t2() {
     param.action = 2;
-
-    fetch(queryString(param))
-    .then(data => data.text())
-    .then(data => document.querySelector('.out-2').innerHTML = data)
+    
+    getFunc('.out-2');
 }
 
 document.querySelector('.b-2').onclick = t2;
@@ -49,9 +62,7 @@ function t3() {
     param.num1 = 30;
     param.num2 = 100;
 
-    fetch(queryString(param))
-    .then(data => data.text())
-    .then(data => document.querySelector('.out-3').innerHTML = data)
+    getFunc('.out-3');
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -65,9 +76,7 @@ function t4() {
     param.num1 = 0;
     param.num2 = 100;
 
-    fetch(queryString(param))
-    .then(data => data.text())
-    .then(data => document.querySelector('.out-4').innerHTML = data)
+    getFunc('.out-4');
 }
 
 document.querySelector('.b-4').onclick = t4;
@@ -77,9 +86,7 @@ document.querySelector('.b-4').onclick = t4;
 function t5() {
     param.action = 5;
  
-    fetch(queryString(param))
-    .then(data => data.text())
-    .then(data => document.querySelector('.out-5').innerHTML = data)
+    getFunc('.out-5');
 }
 
 document.querySelector('.b-5').onclick = t5;
@@ -92,9 +99,7 @@ function t6() {
     param.num1 = 50;
     param.num2 = 200;
 
-    fetch(queryString(param))
-    .then(data => data.text())
-    .then(data => document.querySelector('.out-6').innerHTML = data)
+    getFunc('.out-6');
 }
 
 document.querySelector('.b-6').onclick = t6;
@@ -106,9 +111,7 @@ document.querySelector('.b-6').onclick = t6;
 function t7() {
     param.action = 7;
   
-    fetch(queryString(param))
-    .then(data => data.text())
-    .then(data => document.querySelector('.out-7').innerHTML = data)
+    getFunc('.out-7');
 }
 
 document.querySelector('.b-7').onclick = t7;
@@ -119,9 +122,7 @@ document.querySelector('.b-7').onclick = t7;
 function t8() {
     param.action = 8;
 
-    fetch(queryString(param))
-    .then(data => data.text())
-    .then(data => document.querySelector('.out-8').innerHTML = data)
+    getFunc('.out-8');
 }
 
 document.querySelector('.b-8').onclick = t8;
@@ -134,9 +135,7 @@ function t9() {
     param.action = 9;
     param.y = 1;
 
-    fetch(queryString(param))
-    .then(data => data.text())
-    .then(data => document.querySelector('.out-9').innerHTML = data)
+    getFunc('.out-9');
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -150,15 +149,7 @@ document.querySelector('.b-9').onclick = t9;
 function t10() {
     param.action = 1;
 
-    fetch(queryString(param), {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: queryString(param),
-    })
-        .then(response => response.text())
-        .then(response => document.querySelector('.out-10').innerHTML = response)
+    postFunc('.out-10');
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -169,15 +160,7 @@ document.querySelector('.b-10').onclick = t10;
 function t11() {
     param.action = 2;
 
-    fetch(queryString(param), {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: queryString(param),
-    })
-        .then(response => response.text())
-        .then(response => document.querySelector('.out-11').innerHTML = response)
+    postFunc('.out-11');
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -190,15 +173,7 @@ function t12() {
     param.num1 = 50;
     param.num2 = 40;
 
-    fetch(queryString(param), {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: queryString(param),
-    })
-        .then(response => response.text())
-        .then(response => document.querySelector('.out-12').innerHTML = response)
+    postFunc('.out-12');
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -211,15 +186,7 @@ function t13() {
     param.num1 = 100;
     param.num2 = 20;
 
-    fetch(queryString(param), {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: queryString(param),
-    })
-        .then(response => response.text())
-        .then(response => document.querySelector('.out-13').innerHTML = response)
+    postFunc('.out-13');
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -230,15 +197,7 @@ document.querySelector('.b-13').onclick = t13;
 function t14() {
     param.action = 5;
     
-    fetch(queryString(param), {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: queryString(param),
-    })
-        .then(response => response.text())
-        .then(response => document.querySelector('.out-14').innerHTML = response)
+    postFunc('.out-14');
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -251,15 +210,7 @@ function t15() {
     param.num1 = 150;
     param.num2 = 440;
 
-    fetch(queryString(param), {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: queryString(param),
-    })
-        .then(response => response.text())
-        .then(response => document.querySelector('.out-15').innerHTML = response)
+    postFunc('.out-15');
 }
 
 document.querySelector('.b-15').onclick = t15;
@@ -270,15 +221,7 @@ document.querySelector('.b-15').onclick = t15;
 function t16() {
     param.action = 7;
   
-    fetch(queryString(param), {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: queryString(param),
-    })
-        .then(response => response.text())
-        .then(response => document.querySelector('.out-16').innerHTML = response)
+    postFunc('.out-16');
 }
 
 document.querySelector('.b-16').onclick = t16;
@@ -289,15 +232,7 @@ document.querySelector('.b-16').onclick = t16;
 function t17() {
     param.action = 8;
 
-    fetch(queryString(param), {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: queryString(param),
-    })
-        .then(response => response.text())
-        .then(response => document.querySelector('.out-17').innerHTML = response)
+    postFunc('.out-17');
 }
 
 document.querySelector('.b-17').onclick = t17;
@@ -309,15 +244,7 @@ function t18() {
     param.action = 9;
     param.y = 1;
 
-    fetch(queryString(param), {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: queryString(param),
-    })
-        .then(response => response.text())
-        .then(response => document.querySelector('.out-18').innerHTML = response)
+    postFunc('.out-18');
 }
 
 document.querySelector('.b-18').onclick = t18;
