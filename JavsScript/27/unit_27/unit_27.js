@@ -1,3 +1,17 @@
+let param ={
+    'auth': '37A38D7d5b44Dd6D856478D8',
+    'action': 1,
+    'name': 'Oleksandr',
+    'year': 1986
+}
+
+function queryString(param) {
+    let path = `https://getpost.itgid.info/index2.php?`;
+    for (let key in param){
+        path += `${key}=${param[key]}&`;
+    }
+    return path.slice(0, -1);
+}
 
 // Task 1 ============================================
 /* 
@@ -8,9 +22,29 @@
 */
 
 function t1() {
+        
+    let a = new Promise((resolve, reject) => {
+        param.action = 1;
+        fetch(queryString(param))
+            .then(data => {
+                resolve(data.text());
+            })
+    });
+
+    let b = new Promise((resolve, reject) => {
+         param.action = 2;
+        fetch(queryString(param))
+            .then(data => {
+                resolve(data.text());
+            })
+    });
+
+    Promise.all([a, b]).then(value => {
+        document.querySelector('.out-1').innerHTML = value;
+    });
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-1').onclick = t1;
 
 // Task 2 ============================================
 /* 
@@ -26,11 +60,33 @@ function t1() {
 */
 
 function t2() {
+      
+    let a = new Promise((resolve, reject) => {
+        param.action = 3;
+        param.num1 = 100;
+        param.num2 = 50;
+        fetch(queryString(param))
+            .then(data => {
+                resolve(data.text());
+            })
+    });
 
+    let b = new Promise((resolve, reject) => {
+        param.action = 4;
+        param.num1 = 100;
+        param.num2 = 500;
+        fetch(queryString(param))
+            .then(data => {
+                resolve(data.text());
+            })
+    });
+
+    Promise.all([a, b]).then(value => {
+        document.querySelector('.out-2').innerHTML = value;
+    });
 }
 
-// ваше событие здесь!!!
-
+document.querySelector('.b-2').onclick = t2;
 
 // Task 3 ============================================
 /*  
@@ -46,10 +102,31 @@ function t2() {
                  */
 
 function t3() {
+  
+    let a = new Promise((resolve, reject) => {
+        param.action = 5;
+        fetch(queryString(param))
+            .then(data => {
+                resolve(data.text());
+            })
+    });
 
+    let b = new Promise((resolve, reject) => {
+        param.action = 6;
+        param.num1 = 1000;
+        param.num2 = 500;
+        fetch(queryString(param))
+            .then(data => {
+                resolve(data.text());
+            })
+    });
+
+    Promise.all([a, b]).then(value => {
+        document.querySelector('.out-3').innerHTML = value;
+    });
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-3').onclick = t3;
 
 
 // Task 4 ============================================
@@ -66,10 +143,29 @@ function t3() {
 */
 
 function t4() {
+  
+    let a = new Promise((resolve, reject) => {
+        param.action = 7;
+        fetch(queryString(param))
+            .then(data => {
+                resolve(data.text());
+            })
+    });
 
+    let b = new Promise((resolve, reject) => {
+        param.action = 8;
+        fetch(queryString(param))
+            .then(data => {
+                resolve(data.text());
+            })
+    });
+
+    Promise.all([a, b]).then(value => {
+        document.querySelector('.out-4').innerHTML = value;
+    });
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-4').onclick = t4;
 
 // Task 5 ============================================
 /*  
@@ -83,9 +179,40 @@ POST запрос на сайт http://getpost.itgid.info/index2.php. В кач�
 
 function t5() {
 
+    let a = new Promise((resolve, reject) => {
+        param.action = 1;
+        fetch(queryString(param), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: queryString(param),
+    })
+        .then(response => {
+            resolve(response.text());
+        })
+    });
+
+    let b = new Promise((resolve, reject) => {
+        param.action = 2;
+        fetch(queryString(param), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: queryString(param),
+    })
+        .then(response => {
+            resolve(response.text());
+        })
+    });
+
+    Promise.all([a, b]).then(value => {
+        document.querySelector('.out-5').innerHTML = value;
+    });
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-5').onclick = t5;
 
 // Task 6 ============================================
 /* 
@@ -104,9 +231,44 @@ function t5() {
 
 function t6() {
 
+    let a = new Promise((resolve, reject) => {
+        param.action = 3;
+        param.num1 = 15;
+        param.num2 = 5;
+        fetch(queryString(param), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: queryString(param),
+    })
+        .then(response => {
+            resolve(response.text());
+        })
+    });
+
+    let b = new Promise((resolve, reject) => {
+        param.action = 4;
+        param.num1 = 111;
+        param.num2 = 333;
+        fetch(queryString(param), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: queryString(param),
+    })
+        .then(response => {
+            resolve(response.text());
+        })
+    });
+
+    Promise.all([a, b]).then(value => {
+        document.querySelector('.out-6').innerHTML = value;
+    });
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-6').onclick = t6;
 
 
 // Task 7 ============================================
@@ -123,9 +285,42 @@ function t6() {
 
 function t7() {
 
+    let a = new Promise((resolve, reject) => {
+        param.action = 5;
+        fetch(queryString(param), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: queryString(param),
+    })
+        .then(response => {
+            resolve(response.text());
+        })
+    });
+
+    let b = new Promise((resolve, reject) => {
+        param.action = 6;
+        param.num1 = 1111;
+        param.num2 = 3333;
+        fetch(queryString(param), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: queryString(param),
+    })
+        .then(response => {
+            resolve(response.text());
+        })
+    });
+
+    Promise.all([a, b]).then(value => {
+        document.querySelector('.out-7').innerHTML = value;
+    });
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-7').onclick = t7;
 
 // Task 8 ============================================
 /* 
@@ -142,7 +337,38 @@ function t7() {
 
 function t8() {
 
+    let a = new Promise((resolve, reject) => {
+        param.action = 7;
+        fetch(queryString(param), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: queryString(param),
+    })
+        .then(response => {
+            resolve(response.text());
+        })
+    });
+
+    let b = new Promise((resolve, reject) => {
+        param.action = 8;
+        fetch(queryString(param), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: queryString(param),
+    })
+        .then(response => {
+            resolve(response.text());
+        })
+    });
+
+    Promise.all([a, b]).then(value => {
+        document.querySelector('.out-8').innerHTML = value;
+    });
 }
 
-// ваше событие здесь!!!
+document.querySelector('.b-8').onclick = t8;
 
