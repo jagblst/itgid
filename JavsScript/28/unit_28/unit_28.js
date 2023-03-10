@@ -12,3 +12,19 @@ const goods_7 = new Goods2('apple', 23.5, 'https://cdn0.iconfinder.com/data/icon
 console.log(goods_7);
 
 document.querySelector('.out-7').append(goods_7.draw());
+
+
+const v12 = new Valid2('test@ua.ua', 'qwertyu');
+console.log(v12.validate());
+console.log(v12.isValid);
+console.log(v12.error_message);
+ 
+const v13 = new Valid2('test@ua.ua', 'qwe');
+console.log(v13.validate());
+console.log(v13.isValid);
+console.log(v13.error_message);
+
+const v14 = new Valid2('', 'qwertyu');
+console.log(v14.validate());
+console.log(v14.isValid);
+console.log(v14.error_message);
