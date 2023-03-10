@@ -23,6 +23,10 @@ class Goods {
         img.alt = this.name;
         div.append(img);
 
+        let count = document.createElement('p');
+        count.innerHTML = this.count;
+        div.append(count);
+
         return div;
     }
 }
