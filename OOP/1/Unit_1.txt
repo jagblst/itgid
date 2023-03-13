@@ -1,0 +1,40 @@
+
+Parent сущность: info
+
+const info = {
+  title: '',
+  description: '', 
+  post() {
+    ...Метод публикации 
+  }
+}
+
+сущность: news
+свойства: title, date, description
+метод: post()
+
+сущность: tasks
+свойства: title, description 
+метод: post(), download()
+
+
+// Новость наследуется от Parent и добавляются свойства и методы 
+
+const news = {  
+    date: '...',
+    getNumberOfSertificates() {
+        сколько сертификатов получено...
+    }
+}
+
+// Задачи наследуются от Parent и добавляются свойства и методы 
+
+const tasks = {  
+    hide : true/false, (скрыть/показать таск)
+    openFAQ() {
+        открыть FAQ...
+    },
+    download() {
+        Скачать содержимое...
+    }
+}
