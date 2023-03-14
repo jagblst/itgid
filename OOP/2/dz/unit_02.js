@@ -6,7 +6,14 @@
 // добавьте в него название (name) например Ryzen 7 3700X
 
 const cpu = {
-
+    producer: 'AMD',
+    amount: 250.00,
+    family: 'AMD Ryzen 7',
+    name: 'Ryzen 7 3700X',
+    image: '',
+    sale : function (p) {
+		return this.amount / 100 * (100 - p);
+	}
 }
 
 //Task 2
@@ -18,8 +25,15 @@ const cpu = {
 // name = Hynix DDR4-2666
 // family = DDR4
 
-// создаем memory тут.
+const memory = {
+    memory: 2048,
+    __proto__: cpu,
+}
 
+memory.producer = 'Hynix';
+memory.amount = 60;
+memory.name = 'Hynix DDR4-2666';
+memory.family = 'DDR4';
 
 //Task 3.
 // Представим себе ситуацию, что мы начали использовать данные объекты на странице и поняли что нам не хватает изображения. Добавим свойство image в объект cpu. Поскольку, memory наследуется cpu то данное свойство появится и у него. Просто дописываем данное свойство в cpu.
@@ -29,5 +43,11 @@ const cpu = {
 // https://i2.rozetka.ua/goods/1865699/copy_amd_fx_series_fx_9590_fd9590fhhkwof_58abf05e14fdc_58abfc46c2b65_58abff06c94bd_images_1865699744.jpg
 // а для memory - ссылку https://i2.rozetka.ua/goods/17090881/189441988_images_17090881613.jpg
 
+cpu.image = 'https://i2.rozetka.ua/goods/1865699/copy_amd_fx_series_fx_9590_fd9590fhhkwof_58abf05e14fdc_58abfc46c2b65_58abff06c94bd_images_1865699744.jpg';
+memory.image = 'https://i2.rozetka.ua/goods/17090881/189441988_images_17090881613.jpg';
+
 // Task 5. 
 // Добавьте для cpu метод sale(p) - который возвращает стоимость amount товара с учетом скидки p. Скидка задается в процентах. Например 5%.  
+
+// console.log(cpu.sale(10));
+// console.log(memory.sale(10));
