@@ -6,3 +6,9 @@ class Test {
         return this._testProp;
     }
 }
+
+const test1 = new Test();
+
+test1.testProp = 'Oleksandr';
+console.log(test1);
+console.log(test1.testProp);
