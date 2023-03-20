@@ -32,7 +32,14 @@ class Validate {
           }
           formattedFirstPart += firstPart[i];
         }
-        return `${formattedFirstPart}.${secondPart || '00'}`;
+        return `${formattedFirstPart.trim()}.${secondPart || '00'}`;
     }
 }   
-
+console.log(Validate.isNumber(2345))
+console.log(Validate.isInt(23456.001))
+console.log(Validate.isFloat(23456))
+console.log(Validate.isChar('72'))
+console.log(Validate.isString('false'))
+console.log(Validate.isBoolean(false))
+console.log(Validate.isArray([23456.99]))
+  console.log(Validate.toMoney(5.89))
