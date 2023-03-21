@@ -59,7 +59,9 @@ document.querySelector('.b-3').onclick = function () {
 // По нажатию кнопки b-4 создайте экземпляр класса Test, передайте ему любое число в качестве параметра a. Выведит в консоль результат работы метода  someMethod() , someMethod2
 
 document.querySelector('.b-4').onclick = () => {
-
+    const test = new Test(555);
+    console.log(test.someMethod());
+    console.log(test.someMethod2());
 }
 
 // ==================================================
@@ -68,7 +70,8 @@ document.querySelector('.b-4').onclick = () => {
 // По нажатию кнопки b-5 выведите в консоль статическое свойство b класса Test и результат работы статического метода staticMethod().
 
 document.querySelector('.b-5').onclick = () => {
-
+    console.log(Test.b);
+    console.log(Test.staticMethod());
 }
 
 // ==================================================
