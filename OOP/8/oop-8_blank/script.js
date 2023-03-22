@@ -32,11 +32,11 @@ document.querySelector('.b-1-3').onclick = () => {
 // Дана функция f2, которая к элементу this применяет background. Запустите данную функцию с помощью call и в качестве контекста задайте блок div-2-1, div-2-2.
 
 function f2() {
-    this.style.background = 'orange'
+    this.style.background = 'orange';
 }
 
-// f2.call();
-// f2.call()
+f2.call(document.querySelector('.div-2-1'));
+f2.call(document.querySelector('.div-2-2'));
 
 // ==================================================
 
@@ -47,8 +47,8 @@ function f3(color) {
     this.style.background = color;
 }
 
-// f3.call();
-// f3.call()
+f3.call(document.querySelector('.div-3-1'), 'red');
+f3.call(document.querySelector('.div-3-2'), 'orangered');
 
 // ==================================================
 
@@ -60,8 +60,8 @@ function f4(color) {
     this.style.background = color;
 }
 
-// f4.apply();
-// f4.apply()
+f4.apply(document.querySelector('.div-4-1'), ['red']);
+f4.apply(document.querySelector('.div-4-2'), ['orange']);
 
 // ==================================================
 
@@ -69,11 +69,11 @@ function f4(color) {
 // В остальном, отличий call и apply нет.  Запустите функцию f5 с помощью apply и в качестве контекста задайте блок div-5-1, div-5-2.
 
 function f5() {
-    this.style.background = 'orange'
+    this.style.background = 'orange';
 }
 
-// f5.apply
-// f5.apply
+f5.apply(document.querySelector('.div-5-1'));
+f5.apply(document.querySelector('.div-5-2'));
 
 // ==================================================
 
@@ -81,14 +81,14 @@ function f5() {
 // Научимся применять bind. Создадим новые функции bindF61, bindF62 куда мы добавим функцию f6 с контекстом div-6-1, div-6-2. Запустим эти функции для проверки.  
 
 function f6() {
-    this.style.background = 'orange'
+    this.style.background = 'orange';
 }
 
-// let bindF61 = f6.bind()
-// let bindF62 = f6.bind()
+let bindF61 = f6.bind(document.querySelector('.div-6-1'));
+let bindF62 = f6.bind(document.querySelector('.div-6-2'));
 
-// bindF61();
-// bindF62();
+bindF61();
+bindF62();
 
 // ==================================================
 
@@ -99,10 +99,10 @@ function f7(color) {
     this.style.background = color;
 }
 
-// let bindF71 = f7.bind()
-// let bindF72 = f7.bind()
+let bindF71 = f7.bind(document.querySelector('.div-7-1'), 'orange');
+let bindF72 = f7.bind(document.querySelector('.div-7-2'), 'blue');
 
-// bindF71();
-// bindF72();
+bindF71();
+bindF72();
 
 // ==================================================
