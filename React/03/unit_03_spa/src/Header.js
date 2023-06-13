@@ -1,13 +1,12 @@
 import {Link} from "react-router-dom";
 
-function Header() {
+function Header(props) {
+    const listItem = props.data.mainNav.map(item => <li key={item.link}><Link to={item.link}>{item.text}</Link></li>);
     return(
         <>
             <nav>
                 <ul>
-                    <li><Link to="/">Главная</Link></li>
-                    <li><Link to="/about">О сайте</Link></li>
-                    <li><Link to="/cat">Категории</Link></li>
+                    {listItem}
                 </ul>
             </nav>
         </>
