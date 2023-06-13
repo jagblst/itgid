@@ -1,14 +1,11 @@
-import {useLocation} from "react-router-dom";
 
-function Category() {
-    let url = useLocation();
+function Category(props) {
+    const listItem = props.data.categoryNav.map(item => <li key={item.link}><a href={item.link}>{item.text}</a></li>);
     return(
         <>
           <h1>Category</h1>
             <ul>
-                <li><a href={`${url.pathname}/notebook`}>Ноутбуки</a></li>
-                <li><a href={`${url.pathname}/monitor`}>Мониторы</a></li>
-                <li><a href={`${url.pathname}/cellphone`}>Мобильные телефоны</a></li>
+                {listItem}
             </ul>
         </>
     )

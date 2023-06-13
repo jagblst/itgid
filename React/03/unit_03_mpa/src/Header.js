@@ -1,11 +1,10 @@
-function Header() {
+function Header(props) {
+    const listItem = props.data.mainNav.map(item => <li key={item.link}><a href={item.link}>{item.text}</a></li>);
     return(
         <>
             <nav>
                 <ul>
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/about">О сайте</a></li>
-                    <li><a href="/cat">Категории</a></li>
+                  {listItem}
                 </ul>
             </nav>
         </>
