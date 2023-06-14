@@ -4,45 +4,92 @@ import { useState } from 'react';
 
 
 function App() {
+  let count4 = 0;
 
-  let a = 5;
-  let textInput = React.createRef();
-  let textOut = React.createRef();
-  const [output, setOutput] = useState('hello');
+  function task1() {
 
-  function f1(arg) {
-    console.log('f1 work ' + arg);
   }
+  function task2() {
 
-  function f2() {
-    console.log('move');
   }
+  function task3() {
 
-  function showInput(event) {
-    console.log('input');
-    // console.log(this.value); // !
-    // console.log(event.target.value);
-    console.log(textInput.current.value);
-    textOut.current.innerHTML = textInput.current.value;
-    setOutput(textInput.current.value);
+  }
+  function task4() {
+
+  }
+  function task5() {
+
+  }
+  function task6() {
+
+  }
+  function task7() {
+
+  }
+  function task8() {
+
+  }
+  function task9() {
+
+  }
+  let ar10 = [5, 6, 7];
+  function task10() {
+
   }
 
   return (
     <>
       <h1>События</h1>
       <section>
-        <h2>Button</h2>
-        <button onClick={() => f1(1)}>Push</button>
+        <h2>Task 1</h2>
+        <button className="task-1">Push</button>
       </section>
       <section>
-        <h2>Double click + mouse move</h2>
-        <div className="test" onDoubleClick={() => f1(2)}></div>
+        <h2>Task 2</h2>
+        <div className="task-2"></div>
       </section>
       <section>
-        <h2>Input</h2>
-        <input type="text" onInput={showInput} ref={textInput} defaultValue='hi' />
-        <p ref={textOut}></p>
-        <h3>{output}</h3>
+        <h2>Task 3</h2>
+        <input type="text" className="task-3" />
+      </section>
+      <section>
+        <h2>Task 4</h2>
+        <button className="task-4">Count</button>
+      </section>
+      <section>
+        <h2>Task 5</h2>
+        <input type="checkbox" currentValue="55" />
+        <div className="out-5"></div>
+      </section>
+      <section>
+        <h2>Task 6</h2>
+        <select className="task-6">
+          <option value="7">seven</option>
+          <option value="4">four</option>
+          <option value="9">nine</option>
+          <option value="10">ten</option>
+        </select>
+      </section>
+      <section>
+        <h2>Task 7</h2>
+        <div className="block-7"></div>
+        <button className="task-7">Color</button>
+      </section>
+      <section>
+        <h2>Task 8</h2>
+        <input type="text" className="task-8"></input>
+        <div className="out-8"></div>
+      </section>
+      <section>
+        <h2>Task 9</h2>
+        <input type="range" className="task-9"></input>
+        <div className="out-9"></div>
+      </section>
+      <section>
+        <h2>Task 10</h2>
+        <input type="number" className="i-10"></input>
+        <button className="task-10">Push</button>
       </section>
     </>
   );
