@@ -38,7 +38,7 @@ function App() {
     t7.current.style.background = str;
   }
   function task8(event) {
-    isNaN(+event.key) ? t8.current.innerHTML += '0' : t8.current.innerHTML += '1';
+    (!isNaN(+event.key) && event.key.trim()!=='') ? t8.current.innerHTML += '1' : t8.current.innerHTML += '0';
   }
   function task9(event) {
     t9.current.innerHTML = event.target.value;
