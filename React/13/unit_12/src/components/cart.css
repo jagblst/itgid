@@ -1,0 +1,16 @@
+table {
+    margin: 10px;
+    text-align: center;
+}
+th, td {
+    border: solid black 1px;
+    padding: 5px;
+}
+.total {
+border: none;
+font-size: 22px;    
+text-align: right;
+}
+.hide{
+    display: none;
+  }
